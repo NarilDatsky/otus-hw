@@ -21,7 +21,7 @@ EVEN = "even"
 PRIME = "prime"
 
 
-def filter_numbers(list_of_num, filter_type):
+def filter_numbers(list_of_nums, filter_type):
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
@@ -35,15 +35,11 @@ def filter_numbers(list_of_num, filter_type):
     output = []
 
     if filter_type == "odd":
-        for num in list_of_num:
-            if num % 2 != 0:
-                output.append(num)
+        return [num for num in list_of_nums if num % 2 != 0]
     elif filter_type == "even":
-        for num in list_of_num:
-            if num % 2 == 0:
-                output.append(num)
+        return [num for num in list_of_nums if num % 2 == 0]
     elif filter_type == "prime":
-        for num in list_of_num:
+        for num in list_of_nums:
             abbreviated_list = [2] + list(range(3, abs(num), 2))
             for i in abbreviated_list:
                 if num % i == 0:
